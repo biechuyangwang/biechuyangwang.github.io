@@ -1,80 +1,93 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>雅儿</title>
-    <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background-image: url('bg.jpg');
-            font-size: 85%;
-            margin: 0;
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小仙女 韩惜雅</title>
+	<audio id="myaudio"   src="audio/1.mp3" autoplay="autoplay" loop="loop" style="display:none;">
+		Your browser does not support the audio element.
+	</audio>
+    <style type="text/css">
+        *{padding: 0;
+        margin: 0;}
+        body,html{height:100%;}
+        body{background-image: url("images/sunflower.jpg");background-size: 100% 100%;}
+        #box{width: 280px;
+            height: 400px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            animation: go 45s linear infinite;
+           }
+        #box img{width: 280px;
+                 height: 400px;
+                 position: absolute;
+                 left: 0;
+                 top: 0;
         }
-        
-        h2 {
-            font-size: 220%;
-            font-weight: 400;
-        }
-        
-        .content {
-            position: absolute;
-            width: 100%;
-            top: 40%;
-            transform: translate(0, -50%);
-            text-align: center;
-        }
-        
-        .timer {
-            font-size: 180%;
-            line-height: 1.5;
-            margin: 1em 0;
-        }
-        
-        .timer b {
-            color: rgb(253, 99, 125);
-        }
+        #box img:nth-child(1){
+            transform: rotateY(0deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(2){
+            transform: rotateY(36deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(3){
+            transform: rotateY(72deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(4){
+            transform: rotateY(108deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(5){
+            transform: rotateY(144deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(6){
+            transform: rotateY(180deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(7){
+            transform: rotateY(216deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(8){
+            transform: rotateY(252deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(9){
+            transform: rotateY(288deg) translateZ(650px);text-rendering: auto;}
+        #box img:nth-child(10){
+            transform: rotateY(324deg) translateZ(650px);text-rendering: auto;}
+		@keyframes go {
+		    0%{transform: rotateX(0deg) rotateY(0deg);}
+		    25%{transform: rotateX(20deg) rotateY(180deg);}
+		    50%{transform: rotateX(0deg) rotateY(360deg);}
+		    75%{transform: rotateX(-20deg) rotateY(540deg);}
+		    100%{transform: rotateX(0deg) rotateY(720deg);}
+		
+		}
     </style>
 </head>
+	<body>
+		
+		<div id="box">
+		    <img src="images/1.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/2.jpg" alt="你陪着我的时候，我从没羡慕过任何人。" title="爱你呢"/>
+		    <img src="images/3.jpg" alt="遇到你，是我一生的缘分；牵着你，是我一生的快乐；爱上你，是我一生的幸运。今生有你相伴，是我一生的幸福。" title="爱你呢"/>
+		    <img src="images/4.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/5.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/6.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/7.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/8.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/9.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		    <img src="images/10.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
+		</div>
 
-<body>
-    <div class="content">
-        <h2>呆呆，我们已经在一起了</h2>
-        <div class="timer">
-            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
-        </div>
-    </div>
-
-    <script>
-        function timer() {
-            var start = new Date(2021, 3, 7, 13, 14, 0); // 2021/4/7 13:14:00
-            var t = new Date() - start;
-            var h = ~~(t / 1000 / 60 / 60 % 24);
-            if (h < 10) {
-                h = "0" + h;
-            }
-            var m = ~~(t / 1000 / 60 % 60);
-            if (m < 10) {
-                m = "0" + m;
-            }
-
-            var s = ~~(t / 1000 % 60);
-            if (s < 10) {
-                s = "0" + s;
-            }
-            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-            document.getElementById('h').innerHTML = h;
-            document.getElementById('m').innerHTML = m;
-            document.getElementById('s').innerHTML = s;
-        }
-        timer();
-        setInterval(timer, 1000);
-    </script>
-</body>
-
+        <div class="hovertree"></div>
+		<audio id="bgm1" preload autoplay loop>
+			<source src="audio/听闻远方有你.mp3" type="audio/mpeg" />
+		</audio>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.fireworks.js"></script>
+<script type="text/javascript" src="js/audio.autoplay.js"></script>
+<script type="text/javascript">
+    $('.hovertree').fireworks({
+      sound: false, // sound effect
+      opacity: 0.3, 
+      width: '100%', 
+      height: '100%' 
+    });
+</script>
+	</body>
 </html>
