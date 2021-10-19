@@ -54,7 +54,7 @@
 		    100%{transform: rotateX(0deg) rotateY(720deg);}
 		
 		}
-		.content {
+	.content {
             position: absolute;
             width: 100%;
             top: 40%;
@@ -89,7 +89,7 @@
 		    <img src="images/10.jpg" alt="总想把世界上最好的都给你，却发现世界最好的就是你。" title="爱你呢"/>
 		</div>
 
-        <div class="hovertree"></div>
+        	<div class="hovertree"></div>
 		<audio id="bgm1" preload autoplay loop>
 			<source src="audio/听闻远方有你.mp3" type="audio/mpeg" />
 		</audio>
@@ -100,31 +100,31 @@
 			</div>
 		</div>
 
-    <script>
-        function timer() {
-            var start = new Date(2021, 3, 7, 13, 14, 0); // 2021/4/7 13:14:00
-            var t = new Date() - start;
-            var h = ~~(t / 1000 / 60 / 60 % 24);
-            if (h < 10) {
-                h = "0" + h;
-            }
-            var m = ~~(t / 1000 / 60 % 60);
-            if (m < 10) {
-                m = "0" + m;
-            }
+<script>
+	function timer() {
+	    var start = new Date(2021, 3, 7, 13, 14, 0); // 2021/4/7 13:14:00
+	    var t = new Date() - start;
+	    var h = ~~(t / 1000 / 60 / 60 % 24);
+	    if (h < 10) {
+		h = "0" + h;
+	    }
+	    var m = ~~(t / 1000 / 60 % 60);
+	    if (m < 10) {
+		m = "0" + m;
+	    }
 
-            var s = ~~(t / 1000 % 60);
-            if (s < 10) {
-                s = "0" + s;
-            }
-            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-            document.getElementById('h').innerHTML = h;
-            document.getElementById('m').innerHTML = m;
-            document.getElementById('s').innerHTML = s;
-        }
-        timer();
-        setInterval(timer, 1000);
-    </script>
+	    var s = ~~(t / 1000 % 60);
+	    if (s < 10) {
+		s = "0" + s;
+	    }
+	    document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+	    document.getElementById('h').innerHTML = h;
+	    document.getElementById('m').innerHTML = m;
+	    document.getElementById('s').innerHTML = s;
+	}
+	timer();
+	setInterval(timer, 1000);
+</script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.fireworks.js"></script>
 <script type="text/javascript" src="js/audio.autoplay.js"></script>
