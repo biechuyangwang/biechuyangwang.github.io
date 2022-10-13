@@ -11,25 +11,11 @@
 
 <body>
     <div class="hello">
-        <input type="text" id="demo" value="请输入要查询的题目">
+        <input type="text" style="width: 20%; height: 40px; font-size:inherit" id="demo" placeholder="请输入要查询的内容" onfocus="if(placeholder=='请输入要查询的内容'){placeholder=''}" onblur="if(placeholder==''){placeholder='请输入要查询的内容'}">
         <p id="p1"></p>
     </div>
     <script>
         // 搜索数据
-        const list = [{
-            "title": "Old Man's War",
-            "author": {
-                "firstName": "John",
-                "lastName": "Scalzi"
-            }
-        }, {
-            "title": "The Lock Artist",
-            "author": {
-                "firstName": "Steve",
-                "lastName": "Hamilton"
-            }
-        }, ];
-
         const options = {
             includeScore: true,
             keys: [
@@ -54,7 +40,7 @@
         // console.log(resjson);
         // 实例化 Fuse
         const fuse = new Fuse(resjson, options);
-        res = fuse.search('硬盘是什么');
+        // res = fuse.search('硬盘是什么');
         // console.log(res[0]);
     </script>
     <script>
@@ -66,7 +52,7 @@
                     // console.log(res);
                     var HTML = ""
                     for (let i = 0; i < res.length && i < 5; i++) {
-                        HTML += "问题：" + res[i]['item']['1'] + '</br>' + "答案：" + res[0]['item']['2'] + '</br>' + '</br>';
+                        HTML += "问题：" + res[i]['item']['1'] + '</br>' + "答案：" + res[i]['item']['2'] + '</br>' + '</br>';
                     }
                     document.getElementById("p1").innerHTML = HTML;
                 } else {
