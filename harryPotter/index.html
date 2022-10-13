@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>GET VIDEO</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="/data.json"></script> -->
+</head>
+
+<body>
+    <div class="hello">
+        <input type="text" id="demo" value="请输入要查询的题目">
+        <p id="p1"></p>
+    </div>
+    <script>
+        // 搜索数据
+        const list = [{
+            "title": "Old Man's War",
+            "author": {
+                "firstName": "John",
+                "lastName": "Scalzi"
+            }
+        }, {
+            "title": "The Lock Artist",
+            "author": {
+                "firstName": "Steve",
+                "lastName": "Hamilton"
+            }
+        }, ];
+
+        const options = {
+            includeScore: true,
+            keys: [
+                "1",
+                "2"
+            ]
+        };
+        // var data = jQuery.getJSON("data.json")
+        var resjson;
+        var displayData = function(data) {
+            resjson = data;
+        }
+        $.ajax({
+            url: "data.json",
+            type: "GET",
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                displayData(data);
+            }
+        });
+        // console.log(resjson);
+        // 实例化 Fuse
+        const fuse = new Fuse(resjson, options);
+        res = fuse.search('硬盘是什么');
+        // console.log(res[0]);
+    </script>
+    <script>
+        $(function() {
+            $("input:text").bind('input propertychange', function() {
+                var val = $(this).val();
+                res = fuse.search(val);
+                if (res.length > 0) {
+                    // console.log(res);
+                    var HTML = ""
+                    for (let i = 0; i < res.length && i < 5; i++) {
+                        HTML += "问题：" + res[i]['item']['1'] + '</br>' + "答案：" + res[0]['item']['2'] + '</br>' + '</br>';
+                    }
+                    document.getElementById("p1").innerHTML = HTML;
+                } else {
+                    document.getElementById("p1").innerHTML = "";
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
