@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>python免安装命令行</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+
+  <body>
+    <div>
+        <py-title>python基础练习</py-title>
+    </div>
+      <py-config>
+        packages = [
+          "numpy",
+          "pandas",
+          "scikit-learn",
+          "matplotlib"
+        ]
+      </py-config>
+      <py-box widths="5/6;1/6">
+        <py-repl id="my-repl" auto-generate="true"> </py-repl>
+        <div id="output" class="p-4"></div>
+      </py-box>
+  </body>
+</html>
