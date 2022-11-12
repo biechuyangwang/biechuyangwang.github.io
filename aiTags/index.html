@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>哈利魔法史查询</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="/data.json"></script> -->
+</head>
+
+<body>
+    <div class="hello">
+        <input type="text" style="width: 20%; height: 40px; font-size:inherit" id="demo" placeholder="请输入要查询的内容" onfocus="if(placeholder=='请输入要查询的内容'){placeholder=''}" onblur="if(placeholder==''){placeholder='请输入要查询的内容'}">
+        <p id="p1"></p>
+    </div>
+    <script>
+        // 搜索数据
+        const options = {
+            includeScore: true,
+            keys: [
+                "1",
+                "2"
+            ]
+        };
+        // var data = jQuery.getJSON("data.json")
+        var resjson;
+        var displayData = function(data) {
+            resjson = data;
+        }
+        $.ajax({
+            url: "data.json",
+            type: "GET",
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                displayData(data);
+            }
+        });
+        // console.log(resjson);
+        // 实例化 Fuse
+        const fuse = new Fuse(resjson, options);
+        // res = fuse.search('硬盘是什么');
+        // console.log(res[0]);
+    </script>
+    <script>
+        $(function() {
+            $("input:text").bind('input propertychange', function() {
+                var val = $(this).val();
+                res = fuse.search(val);
+                if (res.length > 0) {
+                    // console.log(res);
+                    var HTML = ""
+                    for (let i = 0; i < res.length && i < 5; i++) {
+                        HTML += "问题：" + res[i]['item']['1'] + '</br>' + "答案：" + res[i]['item']['2'] + '</br>' + '</br>';
+                    }
+                    document.getElementById("p1").innerHTML = HTML;
+                } else {
+                    document.getElementById("p1").innerHTML = "";
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

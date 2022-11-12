@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>查询系统</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="/data.json"></script> -->
+</head>
+
+<body>
+    <div class="hello">
+        <input type="text" style="width: 20%; height: 40px; font-size:inherit" id="demo" placeholder="请输入要查询的内容" onfocus="if(placeholder=='请输入要查询的内容'){placeholder=''}" onblur="if(placeholder==''){placeholder='请输入要查询的内容'}">
+        <p id="p1"></p>
+    </div>
+    <script>
+        // 搜索数据
+        const options = {
+            includeScore: true,
+            keys: [
+                "question",
+                "answer"
+            ]
+        };
+        // var data = jQuery.getJSON("data.json")
+        var res = new Array();
+        var displayData = function(data) {
+            let tmp = data.split("\r\n");
+            console.log(tmp);
+            for (let i = 0; i < tmp.length; i++) {
+                let line = {};
+                // console.log(tmp[i]);
+                // console.log(x.split(" "));
+                line['question'] = tmp[i].split(" ")[0];
+                line['answer'] = tmp[i].split(" ")[1];
+                console.log(line);
+                res.push(line)
+            }
+        }
+        $.ajax({
+            url: "data.txt",
+            type: "GET",
+            // dataType: "json",
+            async: false,
+            success: function(data) {
+                displayData(data);
+            }
+        });
+        console.log(res);
+        console.log(typeof(res));
+        // 实例化 Fuse
+        const fuse = new Fuse(res, options);
+        // res = fuse.search('你好');
+        // console.log(res[0]);
+    </script>
+    <script>
+        $(function() {
+            $("input:text").bind('input propertychange', function() {
+                var val = $(this).val();
+                res = fuse.search(val);
+                if (res.length > 0) {
+                    // console.log(res);
+                    var HTML = ""
+                    for (let i = 0; i < res.length && i < 5; i++) {
+                        HTML += "问题：" + res[i]['item']['question'] + '</br>' + "答案：" + res[i]['item']['answer'] + '</br>' + '</br>';
+                    }
+                    document.getElementById("p1").innerHTML = HTML;
+                } else {
+                    document.getElementById("p1").innerHTML = "";
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
