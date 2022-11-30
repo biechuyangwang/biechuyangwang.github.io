@@ -1,0 +1,5 @@
+pip install pipenv
+pipenv install
+pipenv install -r requirement.txt
+pyinstaller -F -w index.py
+生成的可执行程序在dist文件夹下

@@ -1,0 +1,4 @@
+urllib3
+lxml
+pyinstaller
+pyopenssl

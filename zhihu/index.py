@@ -1,0 +1,92 @@
+import urllib3
+import json
+import re
+from lxml import etree
+from tkinter import *
+from tkinter import messagebox
+
+def pprint(content):
+    text.insert(INSERT,content)
+    text.insert(INSERT,'\n')
+
+def func():
+    data = {"url":[f"{entry.get()}"]}
+    pprint(f"开始解析:{entry.get()}")
+    http = urllib3.PoolManager()
+    headers = {
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+        'Host':'mfyx.top'}
+    
+    # data = {"url":["https://www.zhihu.com/answer/2582002523"]}
+    # url = 'https://mfyx.top/'
+    data = json.dumps(data).encode()
+    response = http.request('POST','https://mfyx.top/api/search',body=data,headers=headers)
+    res_content = json.loads(response.data.decode('utf-8'))
+    # print(res_content)
+    # pprint(res_content)
+    # print(res_content.get('id'))
+    response = http.request('GET',f"https://mfyx.top/archives/{res_content.get('id')}",headers=headers,)
+    res = response.data.decode('utf-8')
+    html  = etree.HTML(res)
+    title = html.xpath('/html/body/div[2]/div/div/div/div/div[2]/h1')[0]
+    content = html.xpath('//*[@id="lightgallery"]')[0]
+    title = etree.tostring(title,encoding='utf-8').decode()
+    title_cont = re.sub(r'<[^>]*?>','' ,title).strip()
+    pprint(f"文章标题:{title_cont}")
+    pprint(f"正在生成txt文件和网页文件")
+    content = etree.tostring(content,encoding='utf-8').decode()
+    content_cont = re.sub(r'<[^>]*?>','' ,content)
+    message = f"""<html>
+    <head></head>
+    <body>{title}\n{content}</body>
+    </html>"""
+    with open(f"{res_content.get('id')}-{title_cont}.html", "w", encoding="utf-8") as f:
+        f.write(message)
+    with open(f"{title_cont}.txt", "w", encoding="utf-8") as f:
+        f.write(content_cont)
+    pprint(f"=====完成=====")
+if __name__ == "__main__":
+    # 创建窗口：实例化一个窗口对象。
+    root = Tk()
+
+    # 窗口大小
+    root.geometry("800x480+347+128")
+
+    #  窗口标题
+    root.title("知乎盐选解析(By:星期六)")
+
+    frame1 = Frame(root)
+    frame2 = Frame(root)
+
+    # 添加标签控件
+    label = Label(frame1,text="盐选链接:",font=("宋体",25),fg="black")
+
+    # 定位
+    label.grid()
+
+    # 添加输入框
+    entry = Entry(frame1,width=30,font=("宋体",25),fg="black")
+    entry.grid(row=0,column=1, padx=10)
+
+    # 添加点击按钮
+    button = Button(frame1,text="转换",font=("宋体",18),fg="blue",command=func)
+    button.grid(row=0,column=2)
+
+    # 多行文本
+    text = Text(frame2,width=50,autoseparators=True,state="normal",wrap="word",spacing2=4,spacing3=25,tabs=16,font=("宋体",20),fg="black")
+    scroll = Scrollbar(frame2,orient=VERTICAL)
+    scroll.pack(side=RIGHT,fill=Y)
+    scroll.config(command=text.yview)
+    text.config(yscrollcommand=scroll.set)
+    text.pack(side=LEFT,fill=X)
+
+
+    frame1.pack(pady=5,fill=X)
+    frame2.pack(fill='both')
+
+    # 显示窗口
+    root.mainloop()
+
+
+
+# print(response.status,response.data.decode('utf-8'))
