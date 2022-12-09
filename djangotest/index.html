@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端上传文件</title>
+</head>
+<body>
+    <input type="file" id="file">
+    <button id="upload">上传</button>
+    <script>
+        var file = document.getElementById('file');
+        var upload = document.getElementById('upload');
+        upload.onclick = function () {
+            var formData = new FormData();
+            formData.append('file', file.files[0]);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload', true);
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>
