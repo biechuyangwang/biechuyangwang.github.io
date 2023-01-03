@@ -3,3 +3,4 @@ lxml
 pyinstaller
 pyopenssl
 requests
+xmltodict

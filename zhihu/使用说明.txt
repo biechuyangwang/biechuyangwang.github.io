@@ -3,3 +3,10 @@ pipenv install
 pipenv install -r requirement.txt
 pyinstaller -F -w index.py
 生成的可执行程序在dist文件夹下
+正常只需删除.lock文件
+修改requirement.txt
+然后执行下面两步就行
+pipenv install -r requirement.txt
+pyinstaller -F -w index.py
+如果报错OPENSSL_Uplink(XX……XX,08): no OPENSSL_Applink
+请把系统环境变量SSLKEYLOGFILE删除

@@ -2,6 +2,7 @@ import urllib3
 import json
 import re
 from lxml import etree
+import xmltodict
 from tkinter import *
 from tkinter import messagebox
 
@@ -10,37 +11,76 @@ def pprint(content):
     text.insert(INSERT,'\n')
 
 def func():
-    data = {"url":[f"{entry.get()}"]}
+    data = entry.get()
     pprint(f"开始解析:{entry.get()}")
     http = urllib3.PoolManager()
     headers = {
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
-        'Host':'mfyx.top'}
+        'Host':'onehu.xyz'}
     
     # data = {"url":["https://www.zhihu.com/answer/2582002523"]}
     # url = 'https://mfyx.top/'
-    data = json.dumps(data).encode()
-    response = http.request('POST','https://mfyx.top/api/search',body=data,headers=headers)
-    res_content = json.loads(response.data.decode('utf-8'))
-    # print(res_content)
-    # pprint(res_content)
-    # print(res_content.get('id'))
-    response = http.request('GET',f"https://mfyx.top/archives/{res_content.get('id')}",headers=headers,)
-    res = response.data.decode('utf-8')
-    html  = etree.HTML(res)
-    title = html.xpath('/html/body/div[2]/div/div/div/div/div[2]/h1')[0]
-    content = html.xpath('//*[@id="lightgallery"]')[0]
-    title = etree.tostring(title,encoding='utf-8').decode()
+    # data = json.dumps(data).encode()
+    response = http.request('GET','https://onehu.xyz/feed.xml',headers=headers)
+    content = response.data.decode('utf-8')
+    xmlparse = xmltodict.parse(content)
+    # jsonstr = json.dumps(xmlparse,indent=1,ensure_ascii=False)
+    jsonstr = xmlparse['rss']['channel']['item']
+    true_url = ""
+    for item in jsonstr:
+        if data in item['title'] or data in item["description"]:
+            true_url = item['link']
+            break
+    # print(true_url)
+
+    if true_url:
+        pprint(f"引擎一解析成功，请稍等。。。")
+        response = http.request('GET',true_url, headers=headers,)
+        res = response.data.decode('utf-8')
+        html  = etree.HTML(res)
+        title = html.xpath('//*[@id="page-info"]/h1/text()')[0]
+        content = html.xpath('//*[@id="post-content"]/div')[0]
+    else:
+        pprint(f"引擎一解析失败，启动引擎二，请稍等。。。")
+        # f"https://ifun.cool/?s={data}&type=post"
+        headers = {
+            'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+        }
+        response = http.request('GET',f"https://ifun.cool/?s={data}&type=post",headers=headers)
+        content = response.data.decode('utf-8')
+        html  = etree.HTML(content)
+        url_a = html.xpath('/html/body/main/div[1]/div/div[2]/posts[1]/div/h2/a')[0]
+        href = ""
+        if "href" in url_a.attrib:
+            href = url_a.attrib["href"]
+            pprint(f"引擎二解析成功，请稍等。。。")
+        else:
+            pprint(f"解析失败，该文章未收录")
+            return
+        # print(href)
+        
+        response = http.request('GET',href, headers=headers,)
+        res = response.data.decode('utf-8')
+        html  = etree.HTML(res)
+        title = html.xpath('/html/body/main/div[1]/div/article/div[1]/h1/a/text()')[0]
+        content = html.xpath('/html/body/main/div[1]/div/article/div[2]/div[1]')[0]
+        # url /html/body/main/div[1]/div/div[2]/posts[1]/div/h2/a
+        # title /html/body/main/div[1]/div/article/div[1]/h1/a
+        # content /html/body/main/div[1]/div/article/div[2]/div[1]
+
+
+    # title = etree.tostring(title,encoding='utf-8').decode()
     title_cont = re.sub(r'<[^>]*?>','' ,title).strip()
+    title_cont = re.sub(r'^[0-9]+','' ,title_cont)
     pprint(f"文章标题:{title_cont}")
     pprint(f"正在生成txt文件和网页文件")
     content = etree.tostring(content,encoding='utf-8').decode()
     content_cont = re.sub(r'<[^>]*?>','' ,content)
     message = f"""<html>
     <head></head>
-    <body>{title}\n{content}</body>
+    <body>{title_cont}\n{content}</body>
     </html>"""
-    with open(f"{res_content.get('id')}-{title_cont}.html", "w", encoding="utf-8") as f:
+    with open(f"{title_cont}.html", "w", encoding="utf-8") as f:
         f.write(message)
     with open(f"{title_cont}.txt", "w", encoding="utf-8") as f:
         f.write(content_cont)
