@@ -1,0 +1,4 @@
+urllib3
+pyinstaller
+pyopenssl
+certifi
