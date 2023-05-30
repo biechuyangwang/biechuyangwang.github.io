@@ -7952,6 +7952,7 @@ if __name__ == "__main__":
 
     # 定位
     label.grid()
+    
 
     # 添加输入框
     entry = Entry(frame2,width=40,font=("宋体",25),fg="black")

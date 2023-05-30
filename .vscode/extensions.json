@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "VisualStudioExptTeam.vscodeintellicode"
+        "visualstudioexptteam.vscodeintellicode",
+        "github.copilot-chat"
     ]
 }
