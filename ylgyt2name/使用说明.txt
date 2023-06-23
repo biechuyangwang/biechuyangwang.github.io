@@ -15,6 +15,7 @@ pyinstaller -F -w t2name.py
 修改requirement.txt
 然后执行下面两步就行
 pipenv install -r requirement.txt
+# conda activate zhihu
 pyinstaller -F -w t2name.py
 如果报错OPENSSL_Uplink(XX……XX,08): no OPENSSL_Applink
 请把系统环境变量SSLKEYLOGFILE删除

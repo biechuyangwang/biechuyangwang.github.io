@@ -5387,7 +5387,7 @@ SKINS = [
         "platform": 1,
         "desc": "",
         "channel": [],
-        "name": "泳圈羊"
+        "name": "日光浴羊"
     },
     {
         "id": 449,
@@ -5736,9 +5736,215 @@ SKINS = [
         "desc": "",
         "channel": [],
         "name": "荷塘羊"
+    },
+    {
+        "id": 478,
+        "clothesId": 478,
+        "index": 575,
+        "spSkin": "skin_391",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "烘焙屋羊"
+    },
+    {
+        "id": 479,
+        "clothesId": 479,
+        "index": 576,
+        "spSkin": "skin_392",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "摘星羊"
+    },
+    {
+        "id": 480,
+        "clothesId": 480,
+        "index": 577,
+        "spSkin": "skin_393",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "热恋羊"
+    },
+    {
+        "id": 481,
+        "clothesId": 481,
+        "index": 578,
+        "spSkin": "skin_394",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "苹果派羊"
+    },
+    {
+        "id": 482,
+        "clothesId": 482,
+        "index": 579,
+        "spSkin": "skin_395",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "少女羊"
+    },
+    {
+        "id": 483,
+        "clothesId": 483,
+        "index": 580,
+        "spSkin": "skin_396",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "海雀羊"
+    },
+    {
+        "id": 484,
+        "clothesId": 484,
+        "index": 581,
+        "spSkin": "skin_397",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "小海牛羊"
+    },
+    {
+        "id": 485,
+        "clothesId": 485,
+        "index": 582,
+        "spSkin": "skin_398",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "佳贝艾特联名羊"
+    },
+    {
+        "id": 486,
+        "clothesId": 486,
+        "index": 583,
+        "spSkin": "skin_399",
+        "spGroup": "Skin350-399",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "",
+        "channel": [],
+        "name": "珍珠贝羊"
+    },
+    {
+        "id": 487,
+        "clothesId": 487,
+        "index": 584,
+        "spSkin": "skin_400",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "英伦羊"
+    },
+    {
+        "id": 488,
+        "clothesId": 488,
+        "index": 585,
+        "spSkin": "skin_401",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "学院羊"
+    },
+    {
+        "id": 489,
+        "clothesId": 489,
+        "index": 586,
+        "spSkin": "skin_402",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "森系羊"
+    },
+    {
+        "id": 490,
+        "clothesId": 490,
+        "index": 587,
+        "spSkin": "skin_403",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "运动羊"
+    },
+    {
+        "id": 491,
+        "clothesId": 491,
+        "index": 588,
+        "spSkin": "skin_404",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "街头羊"
+    },
+    {
+        "id": 492,
+        "clothesId": 492,
+        "index": 589,
+        "spSkin": "skin_405",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "港风羊"
+    },
+    {
+        "id": 493,
+        "clothesId": 493,
+        "index": 590,
+        "spSkin": "skin_406",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "视觉系羊"
+    },
+    {
+        "id": 494,
+        "clothesId": 494,
+        "index": 591,
+        "spSkin": "skin_407",
+        "spGroup": "Skin400-449",
+        "isTopic": 0,
+        "platform": 1,
+        "desc": "在羊羊大世界中，参与<color=#004eff>羊羊潮流</c>活动后获得。",
+        "channel": [],
+        "name": "波西米亚羊"
     }
 ]
 
+
+# 城市
 city_id = [ {
     "id": 0,
     "province": "未知",
@@ -7862,8 +8068,8 @@ def getUserInfo():
         pprint(f"注册时间：{register_time}")
         pprint(f"t值过期时间：{expirationdate_format}")
         pprint(f"所属地区：{province}省 {city}")
-        # pprint(f"定位重置时间：{area_expire_at}")
-        # pprint(f"皮肤数量：{content['data']['skin']}")
+        pprint(f"定位重置时间：{area_expire_at}")
+        pprint(f"皮肤数量：{content['data']['skin']}")
         pprint(f"今日是否已通关日常：{'是' if content['data']['today_state']==1 else '否'}")
         if(content['data']['today_state'] == 1):
             pprint(f"今日日常通关时刻：{today_ts}")
@@ -7877,17 +8083,22 @@ def getUserInfo():
         recent_1_skin = content_skin['data']['skin_list'][-1]
         recent_2_skin = content_skin["data"]['skin_list'][-2]
         recent_3_skin = content_skin["data"]['skin_list'][-3]
-        recent_1_skin_name =  [d['name'] for d in SKINS if d["id"] == recent_1_skin['id']][0]
-        recent_2_skin_name =  [d['name'] for d in SKINS if d["id"] == recent_2_skin['id']][0]
-        recent_3_skin_name =  [d['name'] for d in SKINS if d["id"] == recent_3_skin['id']][0]
+        print(f"{recent_1_skin}")
+        print(f"{recent_2_skin}")
+        print(f"{recent_3_skin}")
+
+        recent_1_skin_name = [d['name'] for d in SKINS if d["id"] == recent_1_skin['id']] # [0]
+        recent_2_skin_name =  [d['name'] for d in SKINS if d["id"] == recent_2_skin['id']]
+        recent_3_skin_name =  [d['name'] for d in SKINS if d["id"] == recent_3_skin['id']]
 
         
         local_time_now = time.localtime(int(time.time()))
-        # pprint(f"当前时间：{local_time_now.tm_year}-{local_time_now.tm_mon}-{local_time_now.tm_mday}")
+        pprint(f"当前时间：{local_time_now.tm_year}-{local_time_now.tm_mon}-{local_time_now.tm_mday}")
         local_time_now_0 = int(time.time()-local_time_now.tm_hour*60*60-local_time_now.tm_min*60-local_time_now.tm_sec+5)
         local_time_now_0_format = time.localtime(local_time_now_0)
+        pprint(f"{local_time_now_0_format}")
         local_time_now_0_format = time.strftime("%Y-%m-%d %H:%M:%S", local_time_now_0_format)
-        # pprint(f"{local_time_now_0_format}")
+        pprint(f"{local_time_now_0_format}")
 
         # {
         # id: 354,
@@ -7901,31 +8112,49 @@ def getUserInfo():
         # { id: 210, created_at: 1673194353, reason: 't:40' }
         # { id: 57, created_at: 1671122805, reason: 'ta:0' }
         world_skin_count = 0
+        pprint(f"今日大世界获得皮肤")
         if recent_1_skin['created_at'] >= local_time_now_0:
+            pprint(f"今日大世界获得皮肤")
             if recent_1_skin['reason'].split(':')[0] == 'wd':
-                pprint(f"今日大世界获得皮肤: {recent_1_skin_name}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+                pprint(f"今日大世界获得皮肤")
+                pprint(f"{recent_1_skin['id']} {len(SKINS)}")
+                if int(recent_1_skin['id']) <= len(SKINS):
+                    pprint(f"今日大世界获得皮肤: {recent_1_skin_name[0]}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+                else: pprint(f"今日大世界获得皮肤: {recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
             elif recent_1_skin['reason'].split(':')[1] == 'season':
-                pprint(f"赛季获得皮肤: {recent_1_skin_name}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+                pprint(f"赛季获得皮肤: {recent_1_skin_name[local_time_now_0]}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
             elif recent_1_skin['reason'].split(':')[0] == 't':
-                pprint(f"今日话题获得皮肤: {recent_1_skin_name}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
-            else: pprint(f"今日常规获得皮肤: {recent_1_skin_name}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+                pprint(f"今日话题获得皮肤: {recent_1_skin_name[0]}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+            else: 
+                if recent_1_skin['id'] <= len(SKINS):
+                    pprint(f"今日常规获得皮肤: {recent_1_skin_name[0]}-{recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
+                else: pprint(f"今日常规获得皮肤: {recent_1_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_1_skin['created_at']))})")
         if recent_2_skin['created_at'] >= local_time_now_0:
             if recent_2_skin['reason'].split(':')[0] == 'wd':
-                pprint(f"今日大世界获得皮肤: {recent_2_skin_name}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+                if recent_2_skin['id'] <= len(SKINS):
+                    pprint(f"今日大世界获得皮肤: {recent_2_skin_name[0]}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+                else: pprint(f"今日大世界获得皮肤: {recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
             elif recent_2_skin['reason'].split(':')[1] == 'season':
-                pprint(f"赛季获得皮肤: {recent_2_skin_name}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+                pprint(f"赛季获得皮肤: {recent_2_skin_name[0]}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
             elif recent_2_skin['reason'].split(':')[0] == 't':
-                pprint(f"今日话题获得皮肤: {recent_2_skin_name}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
-            else: pprint(f"今日常规获得皮肤: {recent_2_skin_name}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+                pprint(f"今日话题获得皮肤: {recent_2_skin_name[0]}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+            else: 
+                if recent_2_skin['id'] <= len(SKINS):
+                    pprint(f"今日常规获得皮肤: {recent_2_skin_name[0]}-{recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
+                else: pprint(f"今日常规获得皮肤: {recent_2_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_2_skin['created_at']))})")
         if recent_3_skin['created_at'] >= local_time_now_0:
             if recent_3_skin['reason'].split(':')[0] == 'wd':
-                pprint(f"今日大世界获得皮肤: {recent_3_skin_name}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
+                if recent_3_skin['id'] <= len(SKINS):
+                    pprint(f"今日大世界获得皮肤: {recent_3_skin_name[0]}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
+                else: pprint(f"今日大世界获得皮肤: {recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
             elif recent_3_skin['reason'].split(':')[1] == 'season':
-                pprint(f"赛季获得皮肤: {recent_3_skin_name}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
+                pprint(f"赛季获得皮肤: {recent_3_skin_name[0]}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
             elif recent_3_skin['reason'].split(':')[0] == 't':
-                pprint(f"今日话题获得皮肤: {recent_3_skin_name}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
-            else: pprint(f"今日常规获得皮肤: {recent_3_skin_name}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
-
+                pprint(f"今日话题获得皮肤: {recent_3_skin_name[0]}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
+            else: 
+                if recent_3_skin['id'] <= len(SKINS):
+                    pprint(f"今日常规获得皮肤: {recent_3_skin_name[0]}-{recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
+                else: pprint(f"今日常规获得皮肤: {recent_3_skin['id']} ({time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(recent_3_skin['created_at']))})")
         # pprint(f"t值：{token}")
         pprint(f"{'='*20}结束{'='*21}")
         return True
