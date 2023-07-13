@@ -6,10 +6,10 @@ const fs = require("fs");
 // 每次只要抓包获取这两个链接即可（地址后五位是版本号会变-可以不抓包，看你自己分析源码找到这个规律） 46 62 10 16
 // 运行 node update_skin.js
 // 结果会在skin_orig.json文件中
-var gd_language = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/46/46b0c95d-d055-444c-b4ae-936b24d1725e.d2c48.json";
-var gd_skin_list = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/62/62e2f78f-fa22-4fee-8294-d16593f17957.0bad6.json";
-var gd_game_topic_list = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/10/10b93ebb-0229-4c5b-b28c-19f37ebe8bb8.37bf8.json";
-var gd_block_topic_slot_data = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/16/16c7f440-2f64-40e1-b7e7-51d257e38e2e.f21d7.json";
+var gd_language = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/46/46b0c95d-d055-444c-b4ae-936b24d1725e.3c84b.json";
+var gd_skin_list = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/62/62e2f78f-fa22-4fee-8294-d16593f17957.9b407.json";
+var gd_game_topic_list = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/10/10b93ebb-0229-4c5b-b28c-19f37ebe8bb8.78954.json";
+var gd_block_topic_slot_data = "https://cat-match-static.easygame2021.com/catMatch/sheep_wx/remote/resources/import/16/16c7f440-2f64-40e1-b7e7-51d257e38e2e.049f8.json";
 const getJsonFromURL = async(url) => {
     let config = {
         "method": "get",
